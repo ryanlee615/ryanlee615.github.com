@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>请升级您的浏览器</title>
+    <link rel="stylesheet" type="text/css" href="css/update-browser.css">
+    <script type="text/javascript">
+        // 浏览器判断
+        var browser = navigator.userAgent.toLowerCase();
+        var reIE = new RegExp("msie (\\d+\\.\\d+);");  
+        reIE.test(browser);  
+        var v = parseFloat(RegExp["$1"]);
+        if(v<10){
+            window.onload = function() {
+                document.getElementById('update').style.display = 'block';
+            };
+        }else{
+            window.location.href = '//www.lijiyun.cc/';
+        }
+    </script>
+</head>
+<body>
+    <div id="update">
+        <div class="con">
+            <h1 class="title">请升级您的浏览器</h1>
+            <h2>尊敬的用户，您现在使用的Internet Explore浏览器版本过低，建议您升级至Internet Explore11版本或使用其他浏览器（如Google Chrome、QQ浏览器、360浏览器、百度浏览器、火狐浏览器），以便您能继续访问返利么的官方网站。</h2>
+            <ul class="browser">
+                <li><a style="padding: 11.5px 0;" href="//browser.qq.com/" target="_blank"><img src="img/update_qq.png"></a></li>
+                <li style="margin-right: 0;"><a href="//www.google.cn/intl/zh-CN/chrome/browser/" target="_blank"><img src="img/update_chrome.png"></a></li>
+                <li><a href="//www.microsoft.com/china/windows/IE/upgrade/index.aspx" target="_blank"><img src="img/update_ie.png"></a></li>
+                <li style="margin-right: 0;"><a href="//www.mozilla.org/zh-CN/firefox/new/" target="_blank"><img src="img/update_firefox.png"></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
