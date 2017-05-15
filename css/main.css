@@ -1,0 +1,116 @@
+body {
+  background: #494A5F;
+  color: #D5D6E2;
+  font-weight: 500;
+  font-size: 1.05em;
+  font-family: "Microsoft YaHei", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #74777b;
+  outline: 0;
+  text-decoration: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+a:hover,
+a:focus {
+  color: #74777b;
+  text-decoration: none;
+}
+/* Pen styling */
+* {
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 1200px;
+}
+.container .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.container .col {
+  color: #fff;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 260px;
+  position: relative;
+}
+.container .col h2 {
+  font-weight: 300;
+  font-size: 1.33333rem;
+  line-height: 1.25;
+  margin: 0;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 0;
+}
+.container .col .photo-container {
+  background: #0f0523 50% 50% / cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+.container .col .slide {
+  background: rgba(25, 1, 21, 0.65);
+  padding: 0 1.5rem;
+}
+.container .col:nth-child(2) {
+  min-width: 20%;
+}
+.container .col:nth-child(4) {
+  min-width: 33%;
+}
+.container .col:nth-child(3) + .col:nth-child(3) {
+  min-width: 50%;
+}
+.container .col:hover .photo-container {
+  -webkit-transform: scale(1.25);
+  transform: scale(1.25);
+}
+.container .col {
+  /* The magic css */
+  overflow: hidden;
+}
+.container .slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  will-change: transform;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: all 0.275s ease-in-out, visibility 0s 0.275s;
+  transition: all 0.275s ease-in-out, visibility 0s 0.275s;
+}
+.container .row:hover ~ .row .slide {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+.container .row:hover .slide {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+.container .row:hover .col:hover ~ .col .slide {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.container .row:hover .col:hover .slide {
+  -webkit-transform: none;
+  transform: none;
+  visibility: visible;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
